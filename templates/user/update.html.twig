@@ -1,0 +1,96 @@
+<!-- Html code for update profile section -->
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link rel="stylesheet" href="{{ asset('css/updateStyle.css')}}">
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="profile">
+				<div class="content">
+					<h1>Edit Profile</h1>
+					<form action="/update" method="POST" enctype="multipart/form-data">
+
+						<fieldset>
+							<div class="grid-35">
+								<label for="avatar">Your Photo</label>
+							</div>
+							<div class="grid-65">
+								<span class="photo" title="Upload your Avatar!">
+									<img class="roundImage" src="" alt="" srcset=""></span>
+								<input type="file" class="btn" name="changedPhoto" accept="image/*"/>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<div class="grid-35">
+								<label for="fname">First Name</label>
+							</div>
+							<div class="grid-65">
+								<input type="text" id="fname" tabindex="1" name="firstName" value="{{ userval.getFirstName }}"/>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<div class="grid-35">
+								<label for="lname">Last Name</label>
+							</div>
+							<div class="grid-65">
+								<input type="text" id="lname" tabindex="2" name="lastName" value="{{ userval.lastName }}"/>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<div class="grid-35">
+								<label for="gender">Gender</label>
+							</div>
+							<div class="grid-65">
+								<input type="text" id="gender" tabindex="2" name="gender" value="{{ userval.getGender }}"/>
+							</div>
+						</fieldset>
+
+						<fieldset>
+
+
+							<fieldset>
+								<div class="grid-35">
+									<label for="email">Email Address</label>
+								</div>
+								<div class="grid-65">
+									<input type="email" id="email" tabindex="6" value="{{ userval.getEmail }}" disabled name="email"/>
+								</div>
+							</fieldset>
+
+							<fieldset>
+								<div class="grid-35">
+									<label for="bio">Bio</label>
+								</div>
+								<div class="grid-65">
+									<textarea id="" cols="30" rows="10" name="bio" placeholder="">
+										{{ userval.getBio }}
+									</textarea>
+								</div>
+							</fieldset>
+
+							<fieldset>
+
+								<fieldset>
+									<a href="/back" class="anchor">Back</a>
+									<input type="submit" class="Btn" value="Save Changes" name="updateChanges"/>
+								</fieldset>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</body>
+
+		</html>
+	</body>
+</html>
